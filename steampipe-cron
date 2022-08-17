@@ -1,0 +1,16 @@
+# Crontab file
+
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/home/ec2-user/steampipe_splunk_tables/scripts
+# MAILTO=root
+
+
+#
+# Hourly Queries
+#
+01 * * * * ec2-user run_query.sh ec2_instances.sql fooli-steampipe-splunk-tables
+
+#
+# Daily Queries
+#
+05 10 * * * ec2-user run_query.sh aws_accounts.sql fooli-steampipe-splunk-tables

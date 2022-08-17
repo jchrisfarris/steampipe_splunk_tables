@@ -1,0 +1,12 @@
+# Crontab file
+
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+# MAILTO=root
+BUCKET=fooli-steampipe-splunk-tables
+
+
+#
+# Sync files every 5 minutes
+#
+*/5 * * * * splunk aws s3 sync s3://$BUCKET/lookup_tables/ /opt/splunk/etc/system/lookups
